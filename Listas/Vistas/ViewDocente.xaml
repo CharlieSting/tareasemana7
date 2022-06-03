@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Listas.Vistas.ViewDocente"
+    Title="Docentes"
+    xmlns:local="clr-namespace:Listas.ViewModel"
+    >
+
+    <ContentPage.BindingContext>
+        <local:VMDocente></local:VMDocente>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Formulario de Docentes" FontSize="50"></Label>
+
+            <Entry Text="{Binding Nombre}" Placeholder="Escriba Nombre de Docente" />
+            <Entry Text="{Binding Identidad}" Placeholder="Escriba Identidad de Docente" Keyboard="Numeric" />
+            <Entry Text="{Binding HorasClase}" Placeholder="Cantidad de Horas a Acumular"
+                   Keyboard="Numeric"/>
+
+            <Label Text="Reporte de Salario:" />
+            <Label Text="{Binding Reporte}"/>
+
+            <Button Text="Acumular Horas Clase" Command="{Binding DarClase}"   />
+            <Button Text="Reset de Horas" Command="{Binding ResetHorasClase}"/>
+            <Button Text="Guardar Docente" Command="{Binding GUARDAR2docen}"/>
+            <Button Text="Buscar Docente" Command="{Binding BUSCAR2docen}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
